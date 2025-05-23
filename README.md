@@ -16,7 +16,7 @@ Additions:
 
 Notes:
 
-- Default layouts (or layouts in general) crash the system when implemented, so the navbar is currently a <NavBar /> element added to each of the pages to test functionality.
+- Default layouts (or layouts in general) crash the system when implemented, so the navbar is currently a NavBar element added to each of the pages to test functionality.
 - The original conecpt moved from Vue alone to Nuxt to get an idea of Vue capabilities before going into Nuxt. As such, there are remnants of the Vue-only version currently left in the code. This is for reference.
 - Webpack has to be used for <style scoped> elements to function. Using the default builder makes it fail.
 - The idea is to focus on Javascript over Typescript. While objects like nuxt.config are currently Typescript due to the requirements of the library, Javascript is being used where possible.
