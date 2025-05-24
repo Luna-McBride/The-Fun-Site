@@ -1,24 +1,28 @@
+const { fileURLToPath } = require("url");
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+
+  app: {
+    buildAssetsDir: fileURLToPath(new URL('./node_modules/_nuxt/', import.meta.url))
+  },
   css: ['./assets/main.css'],
+
   components: true,
+
   routeRules: {
     '/**': { isr: true }
   },
-  vite: {
-    vue: {
-      customElement: true
-    },
-    vueJsx: {
-      mergeProps: true
-    }
-  },
-  builder: 'webpack',
+
+  builder: 'vite',
+
   experimental: {
-    treeshakeClientOnly: false
+    treeshakeClientOnly: false,
+    appManifest: false
   },
+
   webpack: {
     loaders: {
       vue: {
@@ -26,7 +30,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  vue: {
-    propsDestructure: true
-  }
+
+  modules: ['@nuxt/eslint']
 })

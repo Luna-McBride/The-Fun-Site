@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <NavBar />
-  </div>
   <main>
     <p> Hi! </p>
   </main>
 </template>
 
+
 <script setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import NavBar from './NavBar.vue'
+
+definePageMeta({
+  layout: 'default'
+})
 
 const router = useRouter()
 const route = useRoute()
